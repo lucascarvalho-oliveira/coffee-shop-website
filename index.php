@@ -11,13 +11,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Café & Grão</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="topo">
         <div class="mensagem_topo">
             <p>Frete grátis para acima de R$ 150,00</p>
         </div>
+        <div class="container cabecalho">
         <div class="title">
             <h1>Café <span>&</span> Grão</h1>
         </div>
@@ -35,9 +37,12 @@
         <div class="btn_topo">
             <a href="#">Carrinho</a>
         </div>
+        </div>
     </header>
 
     <section class="hero">
+        <div class="container hero_conteudo">
+        <div class="texto_hero">
         <div class="title_hero">
             <p>colheita 2026</p>
             <h1>Café freco, torrado toda semana.</h1>
@@ -46,26 +51,29 @@
         <div class="btn_hero">
             <a href="#">Ver produtos</a>
         </div>
+        </div>
+        <img class="img_hero" src="assets/imagens/hero.svg" alt="Xícara de café fumegante sobre um pires">
+        </div>
     </section>
 
-    <main class="produtos">
-        <div class=""title_produtos>
+    <main class="container produtos">
+        <div class="title_produtos">
             <h2>Nossos produtos</h2>
             <p>Selecionados por quem entende de café</p>
         </div>
 
         <div class="btn_container">
-            <button data-filtro="todos">Todos</button>
-            <button data-filtro="cafes">Cafés</button>
-            <button data-filtro="Acessorios">Acessórios</button>
-            <button data-filtro="kits">Kits</button>
+            <button>Todos</button>
+            <button>Cafés</button>
+            <button>Acessórios</button>
+            <button>Kits</button>
         </div>
 
         <div class="catalogo-container">
             <?php foreach ($lista as $p): ?>
 
             <?php
-                $cat = mb_strtolower($p->getCategoriaNome(), 'UTF-8');
+                $cat = mb_strtolower($p->getCategoriaNome());
 
                 if($p->getPrecoPromocional() !== null && $p->getPrecoPromocional() > 0){
                     $temPromocao = true;
@@ -94,19 +102,22 @@
                     
                     <?php endif; ?>
 
-                    <img>
+                    <img
+                        src="assets/imagens/<?= htmlspecialchars($p->getImagem()) ?>"
+                        alt="<?= htmlspecialchars($p->getNome()) ?>"
+                    >
 
                 </div>
 
                 <div class="corpo_card">
                     <div class="categoria">
-                        <?= htmlspecialchars($p->getCategoriaNome(), ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($p->getCategoriaNome()) ?>
                     </div>
                     <div class="nome">
-                        <?= htmlspecialchars($p->getNome(), ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($p->getNome()) ?>
                     </div>
                     <div class="descricao">
-                        <?= htmlspecialchars($p->getDescricao(), ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($p->getDescricao()) ?>
                     </div>
                 </div>
 
@@ -144,12 +155,15 @@
     </main>
 
     <footer class="footer">
+        <div class="container rodape">
+        <div class="sobre">
         <div class="title">
             <h1>Café <span>&</span> Grão</h1>
         </div>
         <p>Cafés especiais e acessórios para quem leva o preparo a serio. Torrando
             em pequenos lotes, enviado para todo o Brasil.
         </p>
+        </div>
         <div class="conteudo">
             <h4>Categoria</h4>
             <ul>
@@ -168,6 +182,7 @@
         </div>
         <div>
             <p>2026 café & Grão. projeto ficticio para fins didaticos</p>
+        </div>
         </div>
     </footer>
 </body>
