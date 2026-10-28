@@ -46,7 +46,7 @@
         <div class="title_hero">
             <p>colheita 2026</p>
             <h1>Café freco, torrado toda semana.</h1>
-            <p>Gãos especiais de pequenos produtores brasileiros, direto da torra para a sua xícara.</p>
+            <h3>Gãos especiais de pequenos produtores brasileiros, direto da torra para a sua xícara.</h3>
         </div>
         <div class="btn_hero">
             <a href="#">Ver produtos</a>
@@ -63,93 +63,103 @@
         </div>
 
         <div class="btn_container">
-            <button>Todos</button>
-            <button>Cafés</button>
-            <button>Acessórios</button>
-            <button>Kits</button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="ativo">Todos</a></li>
+                    <li><a href="#">Cafés</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">Kits</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="catalogo-container">
             <?php foreach ($lista as $p): ?>
 
-            <?php
-                $cat = mb_strtolower($p->getCategoriaNome());
+                <?php
+                    $cat = mb_strtolower($p->getCategoriaNome());
 
-                if($p->getPrecoPromocional() !== null && $p->getPrecoPromocional() > 0){
-                    $temPromocao = true;
-                }else{
-                    $temPromocao = false;
-                }
-                
-                if((int) $p->getNovo() === 1){
-                    $produtoNovo = true;
-                }else{
-                    $produtoNovo = false;
-                }
-            ?>
-
-            <?php
-                if((int) $p->getAtivo() === 1):
-            ?>
-
-            <div class="card">
-                <div class="topo-card <?= $corTopo ?>">
-                    <?php if($produtoNovo): ?>
-                        <span class="novo">NOVO</span>
-
-                    <?php elseif($temPromocao): ?>
-                        <span class="promocao">PROMOÇÃO</span> 
+                    if($p->getPrecoPromocional() !== null && $p->getPrecoPromocional() > 0){
+                        $temPromocao = true;
+                    }else{
+                        $temPromocao = false;
+                    }
                     
-                    <?php endif; ?>
+                    if((int) $p->getNovo() === 1){
+                        $produtoNovo = true;
+                    }else{
+                        $produtoNovo = false;
+                    }
+                ?>
 
-                    <img
-                        src="assets/imagens/<?= htmlspecialchars($p->getImagem()) ?>"
-                        alt="<?= htmlspecialchars($p->getNome()) ?>"
-                    >
+                <?php if((int) $p->getAtivo() === 1): ?>
 
-                </div>
+                    <article class="card">
+                        <div class="topo-card">
+                            <?php if($produtoNovo): ?>
+                                <span class="novo">NOVO</span>
 
-                <div class="corpo_card">
-                    <div class="categoria">
-                        <?= htmlspecialchars($p->getCategoriaNome()) ?>
-                    </div>
-                    <div class="nome">
-                        <?= htmlspecialchars($p->getNome()) ?>
-                    </div>
-                    <div class="descricao">
-                        <?= htmlspecialchars($p->getDescricao()) ?>
-                    </div>
-                </div>
+                            <?php elseif($temPromocao): ?>
+                                <span class="promocao">PROMOÇÃO</span> 
+                            
+                            <?php endif; ?>
+                            
+                            <?php if ($p->getEstoque() > 0): ?>
+                                <img
+                                    src="assets/imagens/<?= htmlspecialchars($p->getImagem()) ?>"
+                                    alt="<?= htmlspecialchars($p->getNome()) ?>"
+                                >
+                            <?php else: ?>
+                                <img
+                                    class="img-esgotado"
+                                    src="assets/imagens/<?= htmlspecialchars($p->getImagem()) ?>"
+                                    alt="<?= htmlspecialchars($p->getNome()) ?>"
+                                >
+                            <?php endif; ?>        
 
-                <div>
-                    <?php if ($temPromocao): ?>
-                        <div class="preco-antigo">
-                            R$ <?= number_format($p->getPreco(), 2, ',', '.') ?>
                         </div>
-                    <?php endif; ?>
 
-                    <div class="preco <?= $temPromocao ? 'promocao-texto' : '' ?>">
-                        R$ <?= number_format(
-                            $temPromocao
-                                ? $p->getPrecoPromocional()
-                                : $p->getPreco(),
-                            2,',','.'
-                        ) ?>
-                    </div>
-                </div>
+                        <div class="corpo_card">
+                            <div class="categoria">
+                                <?= htmlspecialchars($p->getCategoriaNome()) ?>
+                            </div>
+                            <h3 class="nome">
+                                <?= htmlspecialchars($p->getNome()) ?>
+                            </h3>
+                            <div class="descricao">
+                                <?= htmlspecialchars($p->getDescricao()) ?>
+                            </div>
+                        </div>
 
-                <?php if ($p->getEstoque() > 0): ?>
-                    <button class="btn-comprar">
-                        Adicionar ao carrinho
-                    </button>
-                <?php else: ?>
-                    <button class="btn-esgotado">
-                        Esgotado
-                    </button>
-                <?php endif; ?> 
-            </div>
-            
-            <?php endif; ?>
+                        <div class="precos">
+                            <?php if ($temPromocao): ?>
+                                <div class="preco-antigo">
+                                    R$ <?= number_format($p->getPreco(), 2, ',', '.') ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="preco <?= $temPromocao ? 'promocao-texto' : '' ?>">
+                                R$ <?= number_format(
+                                    $temPromocao
+                                        ? $p->getPrecoPromocional()
+                                        : $p->getPreco(),
+                                    2,',','.'
+                                ) ?>
+                            </div>
+                        </div>
+
+                        <?php if ($p->getEstoque() > 0): ?>
+                            <button class="btn-comprar">
+                                Adicionar ao carrinho
+                            </button>
+                        <?php else: ?>
+                            <button class="btn-esgotado" disabled>
+                                Esgotado
+                            </button>
+                        <?php endif; ?> 
+                    </article>
+                
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </main>
@@ -158,7 +168,7 @@
         <div class="container rodape">
         <div class="sobre">
         <div class="title">
-            <h1>Café <span>&</span> Grão</h1>
+            <h2>Café <span>&</span> Grão</h2>
         </div>
         <p>Cafés especiais e acessórios para quem leva o preparo a serio. Torrando
             em pequenos lotes, enviado para todo o Brasil.
@@ -180,7 +190,7 @@
                 <li><p>Seg a Sex, 8h ás 18h</p></li>
             </ul>
         </div>
-        <div>
+        <div class="final">
             <p>2026 café & Grão. projeto ficticio para fins didaticos</p>
         </div>
         </div>

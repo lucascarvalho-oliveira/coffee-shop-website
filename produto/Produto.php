@@ -14,7 +14,7 @@
         public function getId() {return $this->id;}
         public function setId($id) {$this->id = $id;}
 
-        public function getCategoriaNome() {return $this->id;}
+        public function getCategoriaNome() {return $this->categoriaNome;}
         public function setCategoriaNome($categoriaNome) {$this->categoriaNome = $categoriaNome;}
 
         public function getNome() {return $this->nome;}

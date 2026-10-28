@@ -20,7 +20,7 @@
 
                 foreach($linhas as $linha){
                     $p = new Produto();
-                    $p->setCategoriaNome($linha["nome"]);
+                    $p->setCategoriaNome($linha["categoriaNome"]);
                     $p->setNome($linha["nome"]);
                     $p->setDescricao($linha["descricao"]);
                     $p->setPreco($linha["preco"]);
