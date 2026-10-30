@@ -31,8 +31,10 @@ button {
 
 .container {
     max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .topo {
@@ -103,22 +105,28 @@ button {
 }
 
 .hero {
-    padding: 64px 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
     background: #F3E5D8;
 }
 
 .hero_conteudo {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
     gap: 48px;
 }
 
 .texto_hero {
-    flex: 55;
+    flex: 1;
 }
 
 .img_hero {
-    flex: 45;
+    width: 45%;
     max-width: 420px;
 }
 
@@ -134,7 +142,8 @@ button {
     font-size: 44px;
     line-height: 1.15;
     color: #3E2723;
-    margin: 12px 0 16px;
+    margin-top: 12px;
+    margin-bottom: 16px;
 }
 
 .title_hero h3 {
@@ -183,7 +192,8 @@ button {
 }
 
 .btn_container {
-    margin: 28px 0 32px;
+    margin-top: 28px;
+    margin-bottom: 32px;
 }
 
 .btn_container ul {
@@ -265,7 +275,7 @@ button {
 
 .corpo_card {
     flex: 1;
-    padding: 16px 16px 0;
+    padding: 16px;
 }
 
 .categoria {
@@ -281,7 +291,8 @@ button {
     font-weight: bold;
     line-height: 1.4;
     color: #3E2723;
-    margin: 8px 0 6px;
+    margin-top: 8px;
+    margin-bottom: 6px;
 }
 
 .descricao {
@@ -291,7 +302,8 @@ button {
 }
 
 .precos {
-    padding: 16px 16px 0;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .preco {
@@ -339,6 +351,11 @@ button {
 }
 
 .rodape {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 40px;
@@ -393,7 +410,8 @@ button {
     }
 
     .hero {
-        padding: 40px 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
         text-align: center;
     }
 
@@ -411,7 +429,8 @@ button {
     }
 
     .title_hero h3 {
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .rodape {

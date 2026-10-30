@@ -20,39 +20,39 @@
             <p>Frete grátis para acima de R$ 150,00</p>
         </div>
         <div class="container cabecalho">
-        <div class="title">
-            <h1>Café <span>&</span> Grão</h1>
-        </div>
+            <div class="title">
+                <h1>Café <span>&</span> Grão</h1>
+            </div>
 
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Cafés</a></li>
-                <li><a href="#">Acessórios</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cafés</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
 
-        <div class="btn_topo">
-            <a href="#">Carrinho</a>
-        </div>
+            <div class="btn_topo">
+                <a href="#">Carrinho</a>
+            </div>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container hero_conteudo">
-        <div class="texto_hero">
-        <div class="title_hero">
-            <p>colheita 2026</p>
-            <h1>Café freco, torrado toda semana.</h1>
-            <h3>Gãos especiais de pequenos produtores brasileiros, direto da torra para a sua xícara.</h3>
-        </div>
-        <div class="btn_hero">
-            <a href="#">Ver produtos</a>
-        </div>
-        </div>
-        <img class="img_hero" src="assets/imagens/hero.svg" alt="Xícara de café fumegante sobre um pires">
+        <div class="hero_conteudo">
+            <div class="texto_hero">
+                <div class="title_hero">
+                    <p>colheita 2026</p>
+                    <h1>Café freco, torrado toda semana.</h1>
+                    <h3>Gãos especiais de pequenos produtores brasileiros, direto da torra para a sua xícara.</h3>
+                </div>
+                <div class="btn_hero">
+                    <a href="#">Ver produtos</a>
+                </div>
+            </div>
+            <img class="img_hero" src="assets/imagens/hero.svg" alt="Xícara de café fumegante sobre um pires">
         </div>
     </section>
 
@@ -165,34 +165,34 @@
     </main>
 
     <footer class="footer">
-        <div class="container rodape">
-        <div class="sobre">
-        <div class="title">
-            <h2>Café <span>&</span> Grão</h2>
-        </div>
-        <p>Cafés especiais e acessórios para quem leva o preparo a serio. Torrando
-            em pequenos lotes, enviado para todo o Brasil.
-        </p>
-        </div>
-        <div class="conteudo">
-            <h4>Categoria</h4>
-            <ul>
-                <li><p>cafés</p></li>
-                <li><p>Acessórios</p></li>
-                <li><p>kits</p></li>
-            </ul>
-        </div>
-        <div class="conteudo">
-            <h4>Contato</h4>
-            <ul>
-                <li><p>contato@cafeegrao.com.br</p></li>
-                <li><p>(34) 99999-0000</p></li>
-                <li><p>Seg a Sex, 8h ás 18h</p></li>
-            </ul>
-        </div>
-        <div class="final">
-            <p>2026 café & Grão. projeto ficticio para fins didaticos</p>
-        </div>
+        <div class="rodape">
+            <div class="sobre">
+                <div class="title">
+                    <h2>Café <span>&</span> Grão</h2>
+                </div>
+                <p>Cafés especiais e acessórios para quem leva o preparo a serio. Torrando
+                    em pequenos lotes, enviado para todo o Brasil.
+                </p>
+            </div>
+            <div class="conteudo">
+                <h4>Categoria</h4>
+                <ul>
+                    <li><p>cafés</p></li>
+                    <li><p>Acessórios</p></li>
+                    <li><p>kits</p></li>
+                </ul>
+            </div>
+            <div class="conteudo">
+                <h4>Contato</h4>
+                <ul>
+                    <li><p>contato@cafeegrao.com.br</p></li>
+                    <li><p>(34) 99999-0000</p></li>
+                    <li><p>Seg a Sex, 8h ás 18h</p></li>
+                </ul>
+            </div>
+            <div class="final">
+                <p>2026 café & Grão. projeto ficticio para fins didaticos</p>
+            </div>
         </div>
     </footer>
 </body>
